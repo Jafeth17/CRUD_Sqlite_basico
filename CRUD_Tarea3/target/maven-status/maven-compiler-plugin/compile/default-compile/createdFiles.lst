@@ -1,0 +1,6 @@
+BD\InventarioDB.class
+inventario\Aplicacion.class
+inventario\Items.class
+inventario\Main.class
+BD\Conexion.class
+utilities\Layout.class

@@ -19,15 +19,14 @@ public class Main {
         
         Scanner entradaTeclado = new Scanner(System.in);
         
-        Aplicacion musicApp = new Aplicacion(entradaTeclado);
+        Aplicacion inventarioApp = new Aplicacion(entradaTeclado);
         
         while (!(OpcionMenu.toUpperCase().equals("S"))) {
             Layout.printMenu();
             OpcionMenu = entradaTeclado.nextLine();
 
             System.out.println("Texto ingresado es igual a " + OpcionMenu);
-            // Verificar las Opciones
-            musicApp.activarEvento(OpcionMenu);
+            inventarioApp.activarEvento(OpcionMenu);
             
         }
     }

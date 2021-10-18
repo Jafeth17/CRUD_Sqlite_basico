@@ -56,9 +56,7 @@ public class Aplicacion {
         nuevoItem.setProveedor(Layout.obtenerValorParaCampo("Nombre del Proveedor", "Proveedor X", this._EntradaTeclado));
         nuevoItem.setCantidad (Integer.parseInt(Layout.obtenerValorParaCampo("Cantidad", "0", this._EntradaTeclado)));
         nuevoItem.setPrecio (Integer.parseInt(Layout.obtenerValorParaCampo("precio", "0", this._EntradaTeclado)));
-        /*int anio = Integer.parseInt(Layout.obtenerValorParaCampo("Año de Lanzamiento yyyy", "2020", this._EntradaTeclado));
-        int mes = Integer.parseInt(Layout.obtenerValorParaCampo("Mes de Lanzamiento 1-12", "1", this._EntradaTeclado));
-        int dia = Integer.parseInt(Layout.obtenerValorParaCampo("Día de Lanzamiento 1-31", "1", this._EntradaTeclado));*/
+     
        
         this._InvModel.insertProdItem(nuevoItem);
         this._MiInventario = this._InvModel.getItems(true);
@@ -103,12 +101,7 @@ public class Aplicacion {
         Layout.printHeader("Actualizar Registro");
         int selectedId = Integer.valueOf(Layout.obtenerValorParaCampo("Ingrese Codigo Registro", "0", this._EntradaTeclado));
         Items selectProducto = null;
-//        for( int i=0; i < this._MiInventario.size(); i++){
-//            if( selectedId == ((MusicItem)this._MiInventario.get(i)).getId()) {
-//                selectProducto = (MusicItem)this._MiInventario.get(i);
-//                break;
-//            }
-//        }
+
         selectProducto = this._InvModel.getProdItemById(selectedId);
         if (selectProducto == null ) {
             System.out.println("Registro solicitado no existe!!!");
@@ -129,13 +122,7 @@ public class Aplicacion {
     private void eliminarRegistro(){
         Layout.printHeader("Eliminar Registro");
         int selectedId = Integer.valueOf(Layout.obtenerValorParaCampo("Ingrese Codigo Registro", "0", this._EntradaTeclado));
-//        int encontradoEnIndice = -1;
-//        for( int i=0; i < this._MiInventario.size(); i++){
-//            if( selectedId == ((MusicItem)this._MiInventario.get(i)).getId()) {
-//                encontradoEnIndice = i;
-//                break;
-//            }
-//        }
+
         Items selectedMusic = this._InvModel.getProdItemById(selectedId);
         if (selectedMusic != null){
             Layout.printSeparator();
